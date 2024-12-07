@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>User Profile</h1>
+    </header>
+    <main>
+        <!-- Profile Details -->
+        <div id="profile-section">
+            <h2>Profile Details</h2>
+            <div id="profile-details">
+                <p>Loading profile details...</p>
+            </div>
+        </div>
+
+        <!-- Update Profile Form -->
+        <div id="update-section">
+            <h2>Update Profile</h2>
+            <form id="update-profile-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Your Email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="Your Phone" maxlength="8" required>
+
+                <button type="submit">Update Profile</button>
+            </form>
+            <p id="update-message"></p>
+        </div>
+
+        <!-- Membership Status -->
+        <div id="membership-section">
+            <h2>Membership Status</h2>
+            <div id="membership-details">
+                <p>Loading membership status...</p>
+            </div>
+        </div>
+
+        <!-- Rental History -->
+        <div id="rental-history-section">
+            <h2>Rental History</h2>
+            <div id="rental-history">
+                <p>Loading rental history...</p>
+            </div>
+        </div>
+
+        <a href="dashboard.html" class="button">Back to Dashboard</a>
+       
+    </main>
+    <script src="scripts/user.js"></script>
+</body>
+</html>

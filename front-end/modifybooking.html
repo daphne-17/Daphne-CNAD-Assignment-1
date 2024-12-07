@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Modify Reservation</h1>
+    </header>
+    <main>
+        <form id="modify-reservation-form">
+            <label for="reservation-id">Reservation ID:</label>
+            <input type="text" id="reservation-id" readonly>
+
+            <label for="new-start-time">New Start Time:</label>
+            <input type="datetime-local" id="new-start-time" required>
+
+            <label for="new-end-time">New End Time:</label>
+            <input type="datetime-local" id="new-end-time" required>
+
+            <button type="submit">Modify Reservation</button>
+        </form>
+        <p id="modify-message"></p>
+    </main>
+    <a href="dashboard.html" class="button">Back to Dashboard</a>
+    <script src="scripts/modifybooking.js"></script>
+</body>
+</html>
