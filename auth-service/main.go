@@ -2,23 +2,32 @@ package main
 
 import (
 	"auth-service/handlers"
+	"log"
 	"net/http"
 
+	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 )
 
 func main() {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/signup", handlers.SignupHandler)
-	mux.HandleFunc("/login", handlers.LoginHandler)
+	// Create a new Gorilla Mux router
+	router := mux.NewRouter()
 
-	// Wrap the mux with CORS middleware
-	handler := cors.New(cors.Options{
-		AllowedOrigins:   []string{"*"}, // Allow all origins
+	// Define routes
+	router.HandleFunc("/signup", handlers.SignupHandler).Methods("POST")
+	router.HandleFunc("/login", handlers.LoginHandler).Methods("POST")
+
+	// Enable CORS
+	corsHandler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"}, // Allow all origins (use specific domains in production)
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
-	}).Handler(mux)
+	}).Handler(router)
 
-	http.ListenAndServe(":8080", handler)
+	// Start the server
+	log.Println("Auth-Service is running on port 8080")
+	if err := http.ListenAndServe(":8080", corsHandler); err != nil {
+		log.Fatalf("Failed to start Auth-Service: %v", err)
+	}
 }
