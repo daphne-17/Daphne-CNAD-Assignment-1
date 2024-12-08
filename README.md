@@ -21,3 +21,5 @@ And as for security i have used jwt authentication so all microservices are secu
 Services also validate tokens before processing requests ensuring secure communication.
 
 And as for error handling, each services is designed to handle errors gracefully and will return meaning HTTP status code
+
+![image](https://github.com/user-attachments/assets/f45999bf-0506-4e71-a980-cd422b12ad9e)
