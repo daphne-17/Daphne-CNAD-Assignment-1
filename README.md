@@ -23,3 +23,12 @@ Services also validate tokens before processing requests ensuring secure communi
 And as for error handling, each services is designed to handle errors gracefully and will return meaning HTTP status code
 
 ![image](https://github.com/user-attachments/assets/f45999bf-0506-4e71-a980-cd422b12ad9e)
+
+Instructions to run the file
+
+1. Run the sql script and change each link to your database root and passord in each database.go in each service
+2. open 4 terminals and cd to each service in each terminal respectively
+3. run go run main.go in each terminal
+4. run login.html and click sign up
+5. register a user and login
+6. you are good to go :) can just run the different requirements
