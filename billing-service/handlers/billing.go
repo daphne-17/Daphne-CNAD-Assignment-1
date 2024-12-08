@@ -138,7 +138,7 @@ func ConfirmReservationHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	billingQuery := `
-        INSERT INTO Billing (BillingID, UserID, VehicleID, Amount, Status, PromoCode)
+        INSERT INTO Billing (BillingID, ReservationID, UserID, TotalAmount, PromoID)
         VALUES (?, ?, ?, ?, 'Paid', ?)`
 	_, err = database.GetBillingDB().Exec(billingQuery, billingID, userID, req.VehicleID, req.TotalCost, req.PromoCode)
 	if err != nil {
